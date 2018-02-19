@@ -1,8 +1,9 @@
 Sub SelectAone()
     'Credit: Ben Tait 2017
     Dim ws As Worksheet
-    For Each ws In Worksheets
-        ws.Select
+    'This now will work for both hidden and visible worksheets
+    For Each ws In ActiveWorkbook.Worksheets
+    ws.Activate
         Application.Goto Reference:=Range("A1"), Scroll:=True
     Next ws
     
